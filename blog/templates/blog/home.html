@@ -13,15 +13,20 @@
 	<link rel="stylesheet" type="text/css" href="/static/home.css">
 </head>
 <body>
+
+  
 <div>
-	<!-- Image and text -->
+	
 <nav class="navbar navbar-dark bg-primary shadow p-3 mb-5 bg-info rounded">
   <a class="navbar-brand" href="aboutus.html">
     <img src="{% static 'blog/images/logo2.jpg'%}"border-radius=50% width="70" height="50" class="d-inline-block align-top" alt="vbv">
     <b style="color: #cc0099" >VJgram</b>
   </a>
-  <form class="form-inline" method="POST" action="{% url 'feed' %}">
-                {% csrf_token %}
+  <li class="nav-item">
+        <a class="nav-link" class="text-danger" href="{% url 'register' %}">Register</a>
+      </li>
+  <form class="form-inline" method="POST" action="">
+                
     <div class="input-group" id="nav">
       <div class="input-group-prepend">
         <span class="input-group-text" id="basic-addon1">@</span>
@@ -40,7 +45,7 @@
 	<h1>Create an account</h1><br>
 	<h3>It's quick and easy!</h3>
 </div>
-
+<!--
 <div class="content-selection">
   <form method="POST">
     {% csrf_token %}
@@ -82,7 +87,7 @@
     </div>
   </form>
 </div>
-
+-->
 </body>
 </html>
 <style type="text/css">
