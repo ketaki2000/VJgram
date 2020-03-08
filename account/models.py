@@ -11,11 +11,12 @@ from django.contrib.auth.models import User
 		return self.title
 	'''
 class Account(models.Model):
+	GENDER = (("1","Male"),("2","Female"))
 	firstname = models.CharField(max_length=50,default=' ')
 	lastname = models.CharField(max_length=50,default=' ')
 	email = models.EmailField(verbose_name="email",max_length=60,unique=True,default=' ')
 	#birthday = models.DateField(default=YYYY-MM-DD)
-	gender= models.CharField(max_length=50,default=' ')
+	gender= models.CharField(max_length=50,choices=GENDER)
 
 	def __str__(self):
 		return self.email
