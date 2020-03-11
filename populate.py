@@ -5,7 +5,7 @@ import django
 django.setup()
 
 import random
-from account.models import Account
+from user_account.models import Account
 from faker import Faker 
 
 fakegen = Faker()

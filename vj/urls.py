@@ -19,9 +19,11 @@ from django.urls import path, include
 from django.conf.urls.static import static
 from django.conf import settings
 from django.conf.urls import url 
+from blog import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    url(r'^register/',include('account.urls')),
     path('',include('blog.urls')),
-]
+    url(r'^logout/$',views.user_logout,name='logout'),
+    url(r'^user_account/',include('user_account.urls')),
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

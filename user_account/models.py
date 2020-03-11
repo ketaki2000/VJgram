@@ -11,14 +11,14 @@ from django.contrib.auth.models import User
 		return self.title
 	'''
 class Account(models.Model):
+	user = models.OneToOneField(User, null = True, on_delete=models.CASCADE)
 	GENDER = (("1","Male"),("2","Female"))
 	firstname = models.CharField(max_length=50,default=' ')
 	lastname = models.CharField(max_length=50,default=' ')
-	email = models.EmailField(verbose_name="email",max_length=60,unique=True,default=' ')
-	#birthday = models.DateField(default=YYYY-MM-DD)
 	gender= models.CharField(max_length=50,choices=GENDER)
+	profile_pic = models.ImageField(upload_to='profile_pics',blank=True,null=True)
 
 	def __str__(self):
-		return self.email
+		return self.user.username
 	
 # Create your models here.
